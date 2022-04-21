@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomePage extends StatefulWidget {
+  static const String routeName = "/home";
   const HomePage({Key? key}) : super(key: key);
 
   @override
@@ -45,6 +46,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {Navigator.pop(context);},
+          ),
+        ],
         title: const Text("Awesome App"),
       ),
       body: data != null ? 
